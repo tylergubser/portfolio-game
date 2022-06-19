@@ -72,7 +72,7 @@ function animate() {
     if (keys.right.pressed && player.position.x < 400) {
         player.velocity.x = 2
     }
-    else if (keys.left.pressed) {
+    else if (keys.left.pressed && player.position.x > 100) {
         player.velocity.x = -2
     } else player.velocity.x = 0
 
