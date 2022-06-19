@@ -69,13 +69,14 @@ function animate() {
     c.clearRect(0, 0, canvas.width, canvas.height)
     player.update()
     platform.draw()
-    if (keys.right.pressed) {
-        player.velocity.x = 5
+    if (keys.right.pressed && player.position.x < 400) {
+        player.velocity.x = 2
     }
     else if (keys.left.pressed) {
-        player.velocity.x = -5
+        player.velocity.x = -2
     } else player.velocity.x = 0
 
+    // Platform Collision detection
     if (player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width >= platform.position.x && player.position.x <= platform.position.x + platform.width) {
         player.velocity.y = 0
     }
@@ -83,7 +84,6 @@ function animate() {
 animate()
 
 addEventListener('keydown', ({ keyCode }) => {
-    // console.log(keyCode)
     switch (keyCode) {
         case 65:
             console.log('left')
@@ -105,7 +105,7 @@ addEventListener('keydown', ({ keyCode }) => {
 })
 
 addEventListener('keyup', ({ keyCode }) => {
-    // console.log(keyCode)
+
     switch (keyCode) {
         case 65:
             console.log('left')
