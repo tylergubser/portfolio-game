@@ -74,7 +74,8 @@ function animate() {
     }
     else if (keys.left.pressed && player.position.x > 100) {
         player.velocity.x = -2
-    } else player.velocity.x = 0
+    } else {player.velocity.x = 0
+    if (keys.right.pressed) {platform.position.x -= 5}}
 
     // Platform Collision detection
     if (player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width >= platform.position.x && player.position.x <= platform.position.x + platform.width) {
