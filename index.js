@@ -76,7 +76,7 @@ function animate() {
         player.velocity.x = -5
     } else player.velocity.x = 0
 
-    if (player.position.y + player.height <= platform.position.y) {
+    if (player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y) {
         player.velocity.y = 0
     }
 }
