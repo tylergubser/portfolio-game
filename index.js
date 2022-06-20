@@ -40,10 +40,10 @@ class Platform {
     constructor() {
         this.position = {
             x: 200,
-            y: 100
+            y: 500
         }
     this.width = 200
-    this.height = 20
+    this.height = 200
     }
     draw() {
         c.fillStyle = "blue"
@@ -100,7 +100,7 @@ addEventListener('keydown', ({ keyCode }) => {
             break
         case 87:
             console.log('up')
-            player.velocity.y -= 20
+            player.velocity.y -= 10
             break            
     }
 })
